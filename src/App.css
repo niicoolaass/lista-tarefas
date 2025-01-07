@@ -98,7 +98,6 @@ input[type="submit"]:hover {
 .todo-done {
   text-decoration: line-through;
   color: #248736;
-  background: red;
 }
 
 .todo p {
