@@ -3,7 +3,7 @@ import './App.css';
 import { useState, useEffect } from 'react'
 import { BsTrash, BsBookmarkCheck, BsBookmarkCheckFill } from "react-icons/bs";
 
-const API = "http://localhost:5000";
+const API = "https://api-tarefas-alpha.vercel.app/lista-tarefas";
 
 function App() {
 
@@ -16,7 +16,7 @@ function App() {
     const loadData = async (e) => {
       setLoading(true)
 
-      const res = await fetch(API + "/lista-tarefas")
+      const res = await fetch(API)
       .then((res) => res.json())
       .then((data) => data)
       .catch((err) => console.log(err));
@@ -41,7 +41,7 @@ function App() {
       done: false,
     }
     
-    await fetch(API + "/lista-tarefas", {
+    await fetch(API, {
       method: "POST",
       body: JSON.stringify(todo),
       headers: {
@@ -57,7 +57,7 @@ function App() {
 
   const handleDelete = async (id) => {
 
-    await fetch(API + "/lista-tarefas/" + id, {
+    await fetch(API + id, {
       method: "DELETE"
     });
 
@@ -69,7 +69,7 @@ function App() {
 
     todo.done = !todo.done;
 
-    const data = await fetch(API + "/lista-tarefas/" + todo.id, {
+    const data = await fetch(API + todo.id, {
       method: "PUT",
       body: JSON.stringify(todo),
       headers: {
@@ -81,6 +81,9 @@ function App() {
 
   }
 
+  if(loading) {
+    return <p>Carregando...</p>
+  }
 
   return (
     <div className="App">
