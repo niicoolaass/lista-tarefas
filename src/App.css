@@ -96,7 +96,6 @@ input[type="submit"]:hover {
 }
 
 .todo-done {
-  text-decoration: line-through;
   color: rgb(240, 98, 146);
 }
 
