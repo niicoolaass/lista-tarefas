@@ -96,7 +96,9 @@ input[type="submit"]:hover {
 }
 
 .todo-done {
-  color: rgb(240, 98, 146);
+  text-decoration: line-through;
+  color: #248736;
+  background: red;
 }
 
 .todo p {
@@ -114,7 +116,7 @@ input[type="submit"]:hover {
 }
 
 .icon-green:hover {
-  color: green;
+  color: #248736;
 }
 
 .icon-red:hover {
