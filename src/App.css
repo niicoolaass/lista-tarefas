@@ -1,10 +1,10 @@
 .App {
   width: 40%;
   margin: 2em auto;
-  background-color: #394049;
+  background-color:#151B23;
   border-radius: 5px;
   color: white;
-  border: 1px solid rgb(102, 102, 102);
+  border: 1px solid #313840;
 }
 
 .todo-header {
@@ -36,29 +36,41 @@
 }
 
 .form-control label {
-  font-weight: bold;
   font-size: 1em;
   margin-bottom: .4em;
 }
 
 .form-control input {
-  border: 1px solid #222;
+  border: 1px solid #313840;
   border-radius: 2px;
-  background-color: #2c3035;
-  padding: .5em;
-  color: #dfdfdf;
+  background-color: #0D1117;
+  padding: .7em;
+  color: #ffffff;
 }
+
+.form-control input:focus{
+  outline: 1px solid #1F6FEB;
+}
+
 
 input[type="submit"] {
   font-weight: bold;
-  background: #333;
+  font-size: 0.9em;
+  background: #248736;
+  border: none;
   color: #eee;
   display: block;
   width: 100%;
   border-radius: 5px;
   padding: 1em;
   cursor: pointer;
+  transition: 0.3s;
 }
+
+input[type="submit"]:hover {
+  background: #29903B;
+}
+
 
 .list-todo {
   padding: 0 1em 2em;
@@ -80,6 +92,7 @@ input[type="submit"] {
 
 .todo h3 {
   margin-bottom: .5em;
+  font-size: 1.5em;
 }
 
 .todo-done {
@@ -90,12 +103,12 @@ input[type="submit"] {
 .todo p {
   text-align: left;
   font-style: italic;
-  font-size: .7em;
+  font-size: .9em;
   margin-bottom: 1.5em;
 }
 
 .todo svg {
-  font-size: 1.2em;
+  font-size: 1.3em;
   cursor: pointer;
   margin-right: 1em;
   transition: 0.3s;

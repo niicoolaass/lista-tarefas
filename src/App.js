@@ -92,7 +92,7 @@ function App() {
         </div>
 
         <div className='form-todo'>
-          <h2>Insira a sua próxima tarefa:</h2>
+          <h2>Insira a tarefa:</h2>
           <form onSubmit={handleSubmit}>
             <div className='form-control'>
               <label htmlFor="title">O que você vai fazer?</label>
