@@ -55,6 +55,32 @@ function App() {
     setTime("");
   };
 
+  const handleDelete = async (id) => {
+
+    await fetch(API + "/lista-tarefas/" + id, {
+      method: "DELETE"
+    });
+
+    setTodos((prevState) => prevState.filter((todo) => todo.id !== id));
+
+  };
+
+  const handleEdit = async(todo) => {
+
+    todo.done = !todo.done;
+
+    const data = await fetch(API + "/lista-tarefas/" + todo.id, {
+      method: "PUT",
+      body: JSON.stringify(todo),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    setTodos((prevState) => prevState.map((t) => (t.id === data.id ? (t = data) : t)));
+
+  }
+
   if(loading) {
     return <p>Carregando...</p>
   }
@@ -100,12 +126,16 @@ function App() {
           {todos.map((todo) => (
             <div className='todo' key={todo.id}>
               <h3 className={todo.done ? "todo-done" : ""}>{todo.title}</h3>
-              <p>Duração: {todo.time}</p>
+              <p>Duração: {todo.time}h</p>
               <div className='actions'>
-                <span>
-                  {!todo.done ? <BsBookmarkCheck /> : <BsBookmarkCheckFill />}
-                </span>
-                <BsTrash />
+              <span onClick={() => handleEdit(todo)}>
+                {!todo.done ? (
+                  <BsBookmarkCheck className="icon-green" />
+                ) : (
+                  <BsBookmarkCheckFill />
+                )}
+              </span>
+                <BsTrash className="icon-red" onClick={() => handleDelete(todo.id)}/>
               </div>
             </div>
           ))}
