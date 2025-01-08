@@ -122,3 +122,9 @@ input[type="submit"]:hover {
   color: red;
 }
 
+@media(max-width: 768px) {
+  .App {
+    width: 80%;
+  }
+}
+
