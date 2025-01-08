@@ -16,14 +16,14 @@ function App() {
     const loadData = async (e) => {
       setLoading(true)
 
-      const res = await fetch(API)
+      await fetch(API)
       .then((res) => res.json())
       .then((data) => data)
       .catch((err) => console.log(err));
 
       setLoading(false);
 
-      setTodos([]);
+      setTodos([]); 
       
       setLoading(false)
     };
