@@ -1,5 +1,6 @@
 <h1 align="center">Lista de tarefas</h1>
-Este projeto é uma aplicação de lista de tarefas desenvolvida com React para a interface do usuário e uma API que utiliza JSON para armazenar os dados das tarefas.
+Este projeto é uma aplicação de uma lista de tarefas desenvolvida com React para que o usuário organize suas tarefas diárias.<br>
+Utilizando API com JSON para armazenar os dados das tarefas.
 
 ## Funcionalidades 
 
@@ -12,12 +13,12 @@ Este projeto é uma aplicação de lista de tarefas desenvolvida com React para 
 
 Clone o repositório:
    ```
-   git clone https://github.com/seu-usuario/lista-de-tarefas-react.git
+   git clone https://github.com/niicoolaass/lista-tarefas.git
    ```
 
 Acesse o diretório do projeto:
    ```
-   cd lista-de-tarefas-react
+   cd lista-tarefas
    ```
 
 Instale as dependências:
